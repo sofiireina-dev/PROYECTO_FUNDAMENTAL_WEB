@@ -1,0 +1,352 @@
+/* Login Adm */
+
+.login-Body {
+    background: #222D32;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-box {
+    padding: 20px;
+    margin-top: 75px;
+    height: auto;
+    background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.divLogo {
+    height: 100px;
+    line-height: 100px;
+}
+
+.logo {
+    height: 80px;
+}
+
+.login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ECF0F5;
+}
+
+.login-form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.login-input {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid rgb(255, 106, 0);
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+}
+
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
+}
+
+.login-input:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid orangered;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ECF0F5;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #6C6C6C;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+}
+
+.login-boton {
+    border-color: orange;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.login-boton:hover {
+    background-color: rgb(255, 106, 0);
+    color: white;
+    border-color: white;
+}
+
+.login-boton:active {
+    background-color: orangered;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    color: red;
+}
+
+
+/* Inicio Productos */
+
+.contenedor {
+    background-color: white;
+    border-radius: 5px;
+    width: 90vw;
+    height: auto;
+    min-height: 80vh;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.inicio-productos {
+    width: 75vw;
+    height: 60vh;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    position: sticky;
+    color: orangered !important;
+    top: 0;
+    background-color: black !important;
+    display: table-cell;
+}
+
+
+/* Header Adm */
+
+.header-img {
+    height: 50px;
+}
+
+.header-pag,
+.header-pag:visited {
+    color: rgba(255, 165, 0, 0.7);
+}
+
+.header-pag:hover {
+    color: rgb(255, 165, 0)
+}
+
+.btn {
+    background-color: orange;
+    border: 1px solid black;
+}
+
+.btn:hover {
+    background-color: orangered;
+    color: white;
+    border: 1px solid white;
+}
+
+body {
+    background-color: #a9abaa;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+@media all and (min-width: 992px) {
+    .dropdown-menu li {
+        position: relative;
+    }
+    .nav-item .submenu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: -7px;
+    }
+    .nav-item .submenu-left {
+        right: 100%;
+        left: auto;
+    }
+    .dropdown-menu>li:hover {
+        background-color: #f1f1f1
+    }
+    .dropdown-menu>li:hover>.submenu {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .dropdown-menu .dropdown-menu {
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
+        margin-bottom: .5rem;
+    }
+    .dropdown-menu>li:hover>.submenu {
+        display: block;
+    }
+}
+
+
+/* Administracion */
+
+#gestionar,
+#eliminar,
+#act {
+    background-color: orangered;
+    border: 1px solid black;
+    color: white;
+    border-radius: 10px;
+    width: auto;
+}
+
+#gestionar:hover,
+#eliminar:hover,
+#act:hover {
+    background-color: #C15100;
+    border: 1px solid black;
+    color: white;
+    border-radius: 10px;
+}
+
+.adm-productos {
+    width: 75vw;
+    height: 40vh;
+    overflow-x: scroll;
+}
+
+.adm-cuerpoTabla {
+    overflow: auto;
+}
+
+.adm-input,
+.adm-td {
+    width: 110px;
+}
+
+.adm-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.adm-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adm-th,
+.adm-td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.adm-th {
+    position: sticky;
+    color: orangered;
+    top: 0;
+    background-color: black !important;
+    display: table-cell;
+}
+
+
+/* Alta Producto */
+
+.esconder {
+    display: none;
+}
+
+.volver {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#seleccionar,
+#crear {
+    background-color: orangered;
+    border: 1px solid black;
+    color: white;
+    border-radius: 20px;
+}
+
+#seleccionar:hover,
+#crear:hover {
+    background-color: #C15100;
+}
+
+.alta-contenedor {
+    background-color: white;
+    border-radius: 5px;
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+.alta-tit {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.alta-form label {
+    font-weight: bold;
+}
+
+.alta-form input[type="text"],
+.alta-form input[type="number"],
+.alta-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.alta-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.alta-form textarea {
+    height: 200px;
+}
+
+.alta-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
