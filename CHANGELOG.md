@@ -1,6 +1,20 @@
 # Changelog
 Registro de cambios en el proyecto
 
+## [0.1.1] - 2023-06-04
+### Changed
+- Estilos, orden del proyecto...
+### Added
+- Boton para compras con api de paypal
+
+## [0.1.0] - 2023-06-01
+### Changed
+- Se quita modal de carrito
+- Botones para aumentar y disminuir cantidad
+### Added
+- Carrito con uso de session
+- Página de visualización de carrito
+
 ## [0.0.9] - 2023-05-26
 ### Changed
 - Mejora de diseño responsive en productos

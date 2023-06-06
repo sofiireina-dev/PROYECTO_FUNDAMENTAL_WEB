@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logoSinFondo.png">
     <title>Pago Completado</title>
-    <link rel="stylesheet" type="text/css" href="header.css" />
-    <script src="sesion.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="carrito2.js"></script>
 </head>
 
 <body>
@@ -78,8 +78,10 @@
                 $quantity = $keyarray['quantity'];
                 $item_name = $keyarray['item_name'];
 
-                echo "<h1>¡Hemos procesado tu pago exitosamente!</h1> <br>
-            Recibimos $mc_gross € en concepto de: $quantity $item_name.
+                echo "<h1>¡Hemos procesado tu pago exitosamente!</h1> <h3>¡Gracias por comprar en FUNDAMENTAL!</h3><br>
+            <p>ℹ️No olvides descargar la factura, la necesitarás para recoger tu pedido.</p>
+            Recibimos $mc_gross € en concepto de: $quantity $item_name.<br><br>
+            <button class='receptor-btn-factura' onclick='factura()'>Descargar factura</button>
             <br><br><hr><br>
             <p>Vuelve a comprar dando clic <a href='inicio.php'>aquí</a></p>";
                 return;

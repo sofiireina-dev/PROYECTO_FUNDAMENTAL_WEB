@@ -137,3 +137,7 @@ function eliminarDelCarrito(id) {
         }
     };
 }
+
+function factura() {
+    window.location.href = "http://localhost/PROYECTO_FUNDAMENTAL/tiendaOnline/tcpdf/examples/generarFacturaPDF.php";
+}

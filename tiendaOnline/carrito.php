@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="shortcut icon" href="../img/logoSinFondo.png">
-    <link rel="stylesheet" type="text/css" href="header.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="carrito2.js"></script>
 </head>
