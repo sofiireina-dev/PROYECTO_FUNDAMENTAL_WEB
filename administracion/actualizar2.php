@@ -1,12 +1,12 @@
 <?php
-$id = $_GET["id"];
-$nombre = $_GET["nombre"];
-$stock = $_GET["stock"];
-$precio = $_GET["precio"];
-$descripcion = $_GET["descripcion"];
-$marca = $_GET["marca"];
-$modelo = $_GET["modelo"];
-$borde = $_GET["borde"];
+$id = htmlspecialchars(strtolower($_GET["id"]));
+$nombre = htmlspecialchars(strtolower($_GET["nombre"]));
+$stock = htmlspecialchars(strtolower($_GET["stock"]));
+$precio = htmlspecialchars(strtolower($_GET["precio"]));
+$descripcion = htmlspecialchars($_GET["descripcion"]);
+$marca = htmlspecialchars(strtolower($_GET["marca"]));
+$modelo = htmlspecialchars(strtolower($_GET["modelo"]));
+$borde = htmlspecialchars(strtolower($_GET["borde"]));
 
     // Update the product in the database
 $mysqli = new mysqli("localhost", "root", "", "fundamental");

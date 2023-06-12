@@ -111,13 +111,13 @@
                     && isset($_POST["categoria"]) && !empty($_POST["categoria"])
                     && isset($_POST["nombre"]) && !empty($_POST["nombre"])
                 ) {
-                    $nombre = $_POST["nombre"];
-                    $stock = $_POST["stock"];
+                    $nombre = htmlspecialchars(strtolower($_POST["nombre"]));
+                    $stock = htmlspecialchars(strtolower($_POST["stock"]));
                     $descripcion = htmlspecialchars($_POST["descripcion"]);
-                    $precio = htmlspecialchars($_POST["precio"]);
-                    $marca = htmlspecialchars($_POST["marca"]);
-                    $categoria = $_POST["categoria"];
-                    $modelo = htmlspecialchars($_POST["modelo"]);
+                    $precio = htmlspecialchars(strtolower($_POST["precio"]));
+                    $marca = htmlspecialchars(strtolower($_POST["marca"]));
+                    $categoria = htmlspecialchars(strtolower($_POST["categoria"]));
+                    $modelo = htmlspecialchars(strtolower($_POST["modelo"]));
                     $mysqli = new mysqli("localhost", "root", "", "fundamental");
 
                     if ($nombre == "funda") {
@@ -125,8 +125,8 @@
                             isset($_POST["tipo"]) && !empty($_POST["tipo"])
                             && isset($_POST["color"]) && !empty($_POST["color"])
                         ) {
-                            $tipo = htmlspecialchars($_POST["tipo"]);
-                            $color = htmlspecialchars($_POST["color"]);
+                            $tipo = htmlspecialchars(strtolower($_POST["tipo"]));
+                            $color = htmlspecialchars(strtolower($_POST["color"]));
 
                             if ($mysqli->connect_errno) {
                                 exit();
@@ -164,7 +164,7 @@
                         }
                     } elseif ($nombre == "cristal") {
                         if (isset($_POST["borde"]) && !empty($_POST["borde"])) {
-                            $borde = $_POST["borde"];
+                            $borde = htmlspecialchars(strtolower($_POST["borde"]));
 
                             if ($mysqli->connect_errno) {
                                 exit();

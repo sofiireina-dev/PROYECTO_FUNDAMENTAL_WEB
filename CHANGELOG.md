@@ -3,6 +3,15 @@ Registro de cambios en el proyecto
 
 ## [0.1.1] - 2023-06-04
 ### Changed
+- Seguridad en datos de entrada
+### Added
+- Inserción de datos de clientes
+- Inserción en la tabla venta
+- Filtros para ordenar los productos por precio
+- Funcionalidad en la barra de búsqueda
+
+## [0.1.1] - 2023-06-04
+### Changed
 - Estilos, orden del proyecto...
 ### Added
 - Boton para compras con api de paypal
