@@ -5,7 +5,8 @@
 }
 
 .header-pag,
-.header-pag:visited {
+.header-pag:visited,
+.header-pag:active {
     color: rgba(255, 165, 0, 0.7);
 }
 
@@ -99,7 +100,8 @@ hr {
 }
 
 .productos-titPag,
-.carrito-titPAg {
+.carrito-titPAg,
+.datos-titPag {
     color: orange;
 }
 
@@ -260,7 +262,8 @@ hr {
     background-color: rgb(99, 0, 0);
 }
 
-.carrito-btn-comprar {
+.carrito-btn-comprar,
+.datos-btn-continuar {
     color: white;
     height: 70px;
     max-width: 600px !important;
@@ -270,7 +273,8 @@ hr {
     margin-right: 10px;
 }
 
-.carrito-btn-comprar:hover {
+.carrito-btn-comprar:hover,
+.datos-btn-continuar:hover {
     background-color: rgb(140, 40, 4);
 }
 
@@ -319,4 +323,19 @@ legend {
 .receptor-btn-factura:hover {
     background-color: #C15100;
     border: 1px solid white;
+}
+
+
+/* Datos CLIENTES */
+
+.datos-contenedor {
+    height: 85vh;
+    width: 90vw;
+    background-color: rgba(109, 110, 109, 0.2);
+    padding: 50px;
+    overflow: auto;
+}
+
+.datos-btn-continuar {
+    width: 200px;
 }

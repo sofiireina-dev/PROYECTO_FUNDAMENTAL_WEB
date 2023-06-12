@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../img/logoSinFondo.png">
     <title>Pago Completado</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="carrito2.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -77,6 +77,17 @@
                 $payment_status = $keyarray['payment_status'];
                 $quantity = $keyarray['quantity'];
                 $item_name = $keyarray['item_name'];
+
+                include_once("config.php");
+                    $mysqli = new mysqli($host, $user, $pass, $bbdd);
+
+                    if ($mysqli->connect_errno) { //Nos conectamos a la base de datos
+                        exit();
+                    }
+
+                    $result = $mysqli->query("INSERT INTO venta (fecha_hora_venta, id_cliente) VALUES ('" . date('Y-m-d H:i:s') . "', '" . $mysqli->real_escape_string($_GET["cliente"]) . "')");
+                        
+
 
                 echo "<h1>¡Hemos procesado tu pago exitosamente!</h1> <h3>¡Gracias por comprar en FUNDAMENTAL!</h3><br>
             <p>ℹ️No olvides descargar la factura, la necesitarás para recoger tu pedido.</p>

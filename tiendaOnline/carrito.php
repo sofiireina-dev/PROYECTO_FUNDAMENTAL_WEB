@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="../img/logoSinFondo.png">
     <link rel="stylesheet" type="text/css" href="style.css" />
 
-    <script src="carrito2.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -109,31 +109,11 @@
                                     <button class='carrito-btn-vaciar' onclick='vaciarCarrito()'>
                                         ✖️ VACIAR CARRITO
                                     </button>
-
-
-                                    <form action='https://www.sandbox.paypal.com/cgi-bin/webscr' method='post' id='form_pay'>
-
-                                        <input type='hidden' name='business' value='sb-fjs47t19611591@business.example.com'>
-                                        <input type='hidden' name='cmd' value='_xclick'>
-                                    
-                                        <input type='hidden' name='item_name' id='' value='Compra en FUNDAMENTAL WEB' required>
-                                    
-                                        <input type='hidden' name='amount' id='' value='$precio_total' required>
-                                    
-                                        <input type='hidden' name='currency_code' value='EUR'>
-                                    
-                                        <input type='hidden' name='quantity' id='' value='1' required>
-                                    
-                                        <input type='hidden' name='lc' value='es_ES'>
-                                        <input type='hidden' name='no_shipping' value='1'>
-                                        <input type='hidden' name='image_url' value='http://localhost/PROYECTO_FUNDAMENTAL/tiendaOnline/img/logoSinFondo.png'>
-                                        <input type='hidden' name='return' value='http://localhost/PROYECTO_FUNDAMENTAL/tiendaOnline/receptor.php'>
-                                    
-                                        
-                                        <button class='carrito-btn-comprar' type='submit'>
-                                            🛒 TRAMITAR COMPRA
-                                        </button>
-                                    
+                                    <form action='datosCliente.php' method='post'>
+                                    <input type='hidden' value='$precio_total' name='precio'>
+                                    <button class='carrito-btn-comprar' type='submit'>
+                                        🛒 TRAMITAR COMPRA
+                                    </button>
                                     </form>
                             </div>
                             </div>";

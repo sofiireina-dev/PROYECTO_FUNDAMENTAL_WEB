@@ -49,9 +49,9 @@
                         <a class="header-pag nav-link" href="carrito.php">Carrito</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" class="header-buscar" aria-label="Buscar">
-                    <button class="header-btn btn btn-outline-light" type="button">Buscar</button>
+                <form class="d-flex" action="productos.php" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" class="header-buscar" aria-label="Buscar" name="buscar">
+                    <button class="header-btn btn btn-outline-light" type="submit">Buscar</button>
                 </form>
             </div>
         </div>

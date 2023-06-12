@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="../img/logoSinFondo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="carrito2.js?v=2"></script>
+    <script src="script.js?v=2"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
 </head>
@@ -34,11 +34,72 @@
                 } elseif ($nombre = "tecnologia") {
                     $prod = " productos de tecnología ";
                 }
-                $query = "SELECT * FROM producto WHERE nombre='$nombre'";
-                echo "<h2 class='productos-titPag'>Resultados para: $prod</h2>";
+                if (isset($_GET["filtro"])) {
+                    $filtro = $_GET["filtro"];
+                    $query = "SELECT * FROM producto WHERE nombre='$nombre' order by precio_producto $filtro";
+                }else{
+                    $query = "SELECT * FROM producto WHERE nombre='$nombre'";
+                }
+                echo "<div class='row'>
+                <h2 class='productos-titPag col-11'>Resultados:</h2>
+                <li class='nav-item dropdown col-1' id='myDropdown2' style='list-style-type:none;'>
+                    <a class='header-pag nav-link dropdown-toggle' href='#' data-bs-toggle='dropdown'>  Filtros  </a>
+                    <ul class='dropdown-menu bg-dark'>
+                        <li> <a class='header-pag dropdown-item' href='productos.php?id=$nombre&filtro=asc'> Precio de menor a mayor </a></li>
+                        <li> <a class='header-pag dropdown-item' href='productos.php?id=$nombre&filtro=desc'> Precio de mayor a menor </a></li>
+
+                    </ul>
+                </li>
+                </div>
+                ";
+            }elseif(isset($_GET["buscar"])){
+                $searchTerm = htmlspecialchars($_GET["buscar"]) ;
+                $keywords = explode(" ", $searchTerm);
+                $conditions = array();
+                foreach ($keywords as $keyword) {
+                    if (substr($keyword, -2) == 'es') {
+                        $keyword = rtrim($keyword, 'es');
+                    }elseif (substr($keyword, -1) == 's') {
+                        $keyword = rtrim($keyword, 's');
+                    }
+                    $conditions[] = "LOWER(descripcion_producto) LIKE LOWER('%$keyword%')";
+                }
+                if (isset($_GET["filtro"])) {
+                    $filtro = $_GET["filtro"];
+                    $query = "SELECT * FROM producto WHERE " . implode(" AND ", $conditions)." order by precio_producto $filtro";
+                }else{
+                    $query = "SELECT * FROM producto WHERE " . implode(" AND ", $conditions);
+                }
+                echo "<div class='row'>
+                <h2 class='productos-titPag col-11'>Resultados:</h2>
+                <li class='nav-item dropdown col-1' id='myDropdown2' style='list-style-type:none;'>
+                    <a class='header-pag nav-link dropdown-toggle' href='#' data-bs-toggle='dropdown'>  Filtros  </a>
+                    <ul class='dropdown-menu bg-dark'>
+                        <li> <a class='header-pag dropdown-item' href='productos.php?buscar=$searchTerm&filtro=asc'> Precio de menor a mayor </a></li>
+                        <li> <a class='header-pag dropdown-item' href='productos.php?buscar=$searchTerm&filtro=desc'> Precio de mayor a menor </a></li>
+                    </ul>
+                </li>
+                </div>
+                ";
             }else{
-                $query = "SELECT * FROM producto";
-                echo "<h2 class='productos-titPag'>Resultados:</h2>";
+                if (isset($_GET["filtro"])) {
+                    $filtro = $_GET["filtro"];
+                    $query = "SELECT * FROM producto order by precio_producto $filtro";
+                }else{
+                    $query = "SELECT * FROM producto";
+                }
+                echo "<div class='row'>
+                <h2 class='productos-titPag col-11'>Resultados: </h2>
+                <li class='nav-item dropdown col-1' id='myDropdown2' style='list-style-type:none;'>
+                    <a class='header-pag nav-link dropdown-toggle' href='#' data-bs-toggle='dropdown'>  Filtros  </a>
+                    <ul class='dropdown-menu bg-dark'>
+                        <li> <a class='header-pag dropdown-item' href='productos.php?filtro=asc'> Precio de menor a mayor </a></li>
+                        <li> <a class='header-pag dropdown-item' href='productos.php?filtro=desc'> Precio de mayor a menor </a></li>
+
+                    </ul>
+                </li>
+                </div>
+                ";
             }
             
             include_once("config.php");
@@ -91,7 +152,9 @@
                             </div>
                         </div>";
                 }
-            } ?>
+            } 
+            $mysqli->close();
+            ?>
         </div>
     </div>
 </body>
